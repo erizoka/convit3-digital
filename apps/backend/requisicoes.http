@@ -1,0 +1,59 @@
+GET http://localhost:4000/ping
+
+###
+GET http://localhost:4000/eventos
+
+###
+GET http://localhost:4000/eventos/evento-fullstack
+
+###
+GET http://localhost:4000/eventos/9fcbeab1-f9ff-40b8-b4d7-70b206bd5866
+
+###
+GET http://localhost:4000/eventos/valido/evento-fullstack/9fcbeab1-f9ff-40b8-b4d7-70b206bd5866
+
+###
+POST http://localhost:4000/eventos/acessar
+Content-Type: application/json
+
+{
+    "id": "9fcbeab1-f9ff-40b8-b4d7-70b206bd5866",
+    "senha": "senha123"
+}
+
+###
+POST http://localhost:4000/eventos/evento-fullstack/convidado
+Content-Type: application/json
+
+{
+    "nome": "Erica Esteves",
+    "email": "erica@gmail.com",
+    "confirmado": true,
+    "possuiAcompanhantes": true,
+    "qtdeAcompanhantes": 7
+}
+
+###
+POST http://localhost:4000/eventos
+Content-Type: application/json
+
+{
+    "alias": "semana-formacao-dev",
+    "nome": "Evento Semana Formação.DEV",
+    "data": "2025-12-31T23:00",
+    "local": "Rio de Janeiro",
+    "descricao": "Evento de Tecnologia",
+    "senha": "frameworks2025",
+    "imagem": "https://hermes.dio.me/articles/cover/7d407b40-57ea-433a-aa6f-4c64d13f6aec.jpg",
+    "imagemBackground": "https://www.mundoconectado.com.br/wp-content/uploads/2022/05/capa-programacao.jpg",
+    "publicoEsperado": 750,
+    "convidados": [
+        {
+            "nome": "Erica Esteves",
+            "email": "erica@gmail.com",
+            "confirmado": true,
+            "possuiAcompanhantes": true,
+            "qtdeAcompanhantes": 7
+        }
+    ]
+}
