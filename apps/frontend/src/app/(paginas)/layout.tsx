@@ -1,7 +1,14 @@
 import Pagina from "@/components/template/Pagina";
+import { ProvedorContextoEvento } from "@/data/contexts/ContextoEvento";
+import { ProvedorContextoMensagens } from "@/data/contexts/ContextoMensagens";
 
 export default function Layout(props: any) {
     return (
-        <Pagina>{props.children}</Pagina>
+        <ProvedorContextoMensagens>
+            <ProvedorContextoEvento>
+                <Pagina>{props.children}</Pagina>
+                {/* <Toaster /> */}
+            </ProvedorContextoEvento>
+        </ProvedorContextoMensagens>
     )
 }

@@ -1,6 +1,5 @@
 import { Injectable } from '@nestjs/common';
 import { Convidado, Evento } from 'core';
-import { create } from 'domain';
 import { PrismaProvider } from 'src/db/prisma.provider';
 
 @Injectable()

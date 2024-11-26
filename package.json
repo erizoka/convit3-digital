@@ -1,10 +1,12 @@
 {
   "name": "eventos",
   "version": "1.0.0",
+  "private": "true",
   "scripts": {
     "dev": "run-p packages:* apps:*",
     "apps:frontend": "cd apps/frontend && npm run dev",
     "apps:backend": "cd apps/backend && npm run dev",
+    "apps:mobile": "cd apps/mobile && npm run android",
     "packages:core": "cd packages/core && npm run dev"
   },
   "keywords": [],
@@ -13,7 +15,8 @@
   "description": "",
   "dependencies": {
     "eventos": "file:",
-    "npm-run-all": "^4.1.5"
+    "npm-run-all": "^4.1.5",
+    "yarn": "^1.22.22"
   },
   "workspaces": [
     "apps/*",

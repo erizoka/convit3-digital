@@ -29,6 +29,7 @@ export class EventosController {
 
     const eventoCompleto = complementarEvento(this.deserializar(evento));
     await this.repository.salvar(eventoCompleto);
+    return this.serializar(eventoCompleto);
   }
 
   @Post(':alias/convidado')
@@ -42,11 +43,12 @@ export class EventosController {
     }
     const convidadoCompleto = complementarConvidado(convidado);
     await this.repository.salvarConvidado(evento, convidadoCompleto);
+    return { message: 'Convidado criado com sucesso!' };
   }
 
   @Post('acessar')
   async acessarEvento(@Body() dados: { id: string; senha: string }) {
-    const evento = await this.repository.buscarPorId(dados.id);
+    const evento = await this.repository.buscarPorId(dados.id, true);
 
     if (!evento) {
       throw new HttpException('Evento não encontrado.', 400);

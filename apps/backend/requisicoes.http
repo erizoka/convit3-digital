@@ -10,7 +10,7 @@ GET http://localhost:4000/eventos/evento-fullstack
 GET http://localhost:4000/eventos/9fcbeab1-f9ff-40b8-b4d7-70b206bd5866
 
 ###
-GET http://localhost:4000/eventos/valido/evento-fullstack/9fcbeab1-f9ff-40b8-b4d7-70b206bd5866
+GET http://localhost:4000/eventos/validar/evento-fullstack/9fcbeab1-f9ff-40b8-b4d7-70b206bd5866
 
 ###
 POST http://localhost:4000/eventos/acessar

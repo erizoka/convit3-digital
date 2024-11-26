@@ -11,10 +11,12 @@ export default function ConvidadoItem(props: ConvidadoItemProps) {
                 <span className="text-xl font-bold">{props.convidado.nome}</span>
                 <span className="text-sm text-zinc-400">{props.convidado.email}</span>
             </div>
-            <div className="flex flex-col items-end">
-                <span className="text-sm text-zinc-400">Acompanhantes</span>
-                <span className="text-xl font-bold">{props.convidado.qtdeAcompanhantes}</span>
-            </div>
+            {props.convidado.confirmado && (
+                <div className="flex flex-col items-end">
+                    <span className="text-sm text-zinc-400">Acompanhantes</span>
+                    <span className="text-xl font-bold">{props.convidado.qtdeAcompanhantes}</span>
+                </div>
+            )}
         </li>
     )
 }
