@@ -33,6 +33,8 @@ export function ProvedorEventos(props: any) {
             const idESenha = JSON.parse(qrcode)
 
             const evento = await carregarEvento(idESenha.id, idESenha.senha)
+            alert("Evento carregado: " + evento.alias)
+
             if (!evento) {
                 return excluirEvento(idESenha.id)
             }
@@ -42,8 +44,9 @@ export function ProvedorEventos(props: any) {
 
             salvarItem("eventos", novosEventos)
             setEventos(novosEventos)
+
         } catch (error: any) {
-            alert(JSON.stringify(error))
+            alert("Erro ao adicionar o evento: " + JSON.stringify(error))
         }
     }
 

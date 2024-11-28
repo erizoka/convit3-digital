@@ -2,6 +2,7 @@ import useEventos from "@/data/hooks/useEventos";
 import { flex1 } from "@/style";
 import { CameraView } from "expo-camera";
 import { useRouter } from "expo-router";
+import { Image } from "react-native";
 
 export default function TelaQrCode() {
     const { adicionarEventoViaQrCode } = useEventos()
