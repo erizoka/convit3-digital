@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import { Evento } from "core"
+import { Evento, eventos as eventosCore } from "core"
 import useAPI from "../hooks/useAPI";
 import useLocalStorage from "../hooks/useLocalStorage";
 
@@ -33,7 +33,6 @@ export function ProvedorEventos(props: any) {
             const idESenha = JSON.parse(qrcode)
 
             const evento = await carregarEvento(idESenha.id, idESenha.senha)
-            alert("Evento carregado: " + evento.alias)
 
             if (!evento) {
                 return excluirEvento(idESenha.id)
@@ -46,7 +45,7 @@ export function ProvedorEventos(props: any) {
             setEventos(novosEventos)
 
         } catch (error: any) {
-            alert("Erro ao adicionar o evento: " + JSON.stringify(error))
+            alert("Erro ao adicionar o evento: " + error.message)
         }
     }
 
